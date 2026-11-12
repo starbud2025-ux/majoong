@@ -57,6 +57,7 @@ fake 빌드는 퍼미션·SDK 의존성이 없다.
 
 ## 시연 영상
 - `docs/demo/maejung-promo-v2.mp4`(약 75초, 1080p): 유즈케이스 6가지(좌석별 벨트, 인도 쪽 문, 내리기 전 점검, 주정차 금지 구역, 서리 루틴, 주행 중 차단)를 실제 상황 스톡 영상과 앱 화면으로 보여 준다. 메일 첨부용은 `maejung-promo-v2_mail.mp4`.
+- 세로(9:16) 숏폼: https://youtube.com/shorts/K4k1GxDdwlI (파일 `docs/demo/maejung-shorts.mp4`)
 - 앱 화면은 fake 빌드(가상 차량 데이터) 캡처다. 실제 차량 연동 화면이 아니다.
 - 영상 편집 프로젝트: `video/`(HyperFrames). 스톡 영상은 Pixabay(도시 항공)·Pexels(나머지), 효과음은 Pixabay, 모두 무료 라이선스. 서체는 Pretendard(OFL).
 - 이전 버전: `maejung-promo.mp4`(11/10, ffmpeg 편집). `demo-device.mp4`는 앱 이름이 바뀌기 전("내리기 전에") 녹화라 쓰지 않는다.
