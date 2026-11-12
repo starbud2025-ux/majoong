@@ -41,7 +41,7 @@
 
 ## 7단계. 제출 준비 (11/13~11/14)
 - [x] README(실행 방법, 테스트 환경, 사용 SDK, 퍼미션, 한계) 작성
-- [~] 서명 APK(완료), GitHub 경로 정리(미완)
+- [x] 서명 APK, GitHub 경로 정리
 - [x] 기획서 작성(`docs/06` 뼈대) — 접수양식 DOCX
 - [x] 데모 영상(선택): maejung-promo-v2.mp4
 
@@ -113,6 +113,6 @@ F2와 정차 전용 차단은 끝까지 유지.
 - [x] 시연 영상 v2(`docs/demo/maejung-promo-v2.mp4`, 약 75초): 유즈케이스 6가지마다 실제 상황 스톡 영상(Pixabay 1·Pexels 10)과 앱 화면을 나란히 배치. HyperFrames(`video/`)로 편집, 메일용 압축본 `_mail.mp4`. 구역 경고는 "샘플 데이터", 서리 루틴은 "제어 권한 승인 시"로 화면에 명시
 - [x] 팀명 통일: 접수양식 기준 **별틔움**. APK 파일명 `별틔움_마중_release.apk`, `별틔움_마중_fake_release.apk`로 변경, README·영상 엔딩 반영
 - [x] `:core:test` 47개 재확인 통과
-- [ ] GitHub 저장소(가산점): git·gh 설치 확인됨, 저장소 생성·공개 여부는 사용자 결정 필요
+- [x] GitHub 저장소(가산점): https://github.com/starbud2025-ux/majoong (공개), 접수양식 7번에 링크 기재
 - [ ] 제출 메일 발송(사용자): 접수양식 DOCX + 서명 동의서 + 영상(+ GitHub 링크)
 - 남은 한계(제출 전 해결 불가): Pleos Connect Emulator 미검증, FusedLocation·Vehicle Control SDK 미개방
