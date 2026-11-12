@@ -1,0 +1,24 @@
+.gradle/
+build/
+local.properties
+*.jks
+*.keystore
+.idea/
+*.iml
+.kotlin/
+# 개인정보가 들어간 접수 서류(이메일로만 제출)
+docs/*.docx
+# 큰 원본·이전 영상 (제출 영상은 maejung-promo-v2*.mp4)
+docs/demo/stock/
+docs/demo/demo-device.mp4
+docs/demo/maejung-promo.mp4
+docs/demo/maejung-promo_mail.mp4
+docs/demo/raw_emulator.mp4
+# 영상 프로젝트 캐시·원본 스톡
+video/.hyperframes/
+video/.thumbnails/
+video/node_modules/
+video/renders/
+video/assets/stock/
+video/_v1/
+video/.waveform-cache/

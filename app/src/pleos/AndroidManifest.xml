@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 승인된 퍼미션만(docs/03 §3, §7.4). 조회: CAR_*, 제어: CONTROL_CAR_* -->
+    <!-- 조회 -->
+    <uses-permission android:name="pleos.car.permission.CAR_DOORS" />
+    <uses-permission android:name="pleos.car.permission.CAR_WINDOWS" />
+    <uses-permission android:name="pleos.car.permission.CAR_SEATS" />
+    <uses-permission android:name="pleos.car.permission.CAR_CLIMATE" />
+    <uses-permission android:name="pleos.car.permission.CAR_MIRRORS" />
+    <uses-permission android:name="pleos.car.permission.CAR_SAFETY" />
+    <!-- 기어(P 판별): Gear.registerGearSelection 등이 요구(SDK lint로 확인, 사용자 승인 2026-11-09) -->
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />
+    <!-- 제어(F4 서리 루틴, 사용자 동의 후에만 호출) -->
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_CLIMATE" />
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_WINDOWS" />
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_MIRRORS" />
+    <!-- 공통(docs/03 §8로 이름 확인) -->
+    <uses-permission android:name="pleos.car.permission.TTS_SERVICE" />
+    <uses-permission android:name="pleos.car.permission.FUSED_LOCATION" />
+    <!-- 미선언: AAOS 기어·외기온도(android.car.* 퍼미션 이름·승인 범위 미확인) -->
+</manifest>

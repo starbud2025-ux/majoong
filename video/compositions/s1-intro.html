@@ -1,0 +1,47 @@
+<template>
+<style>@font-face{font-family:'MG';src:local('Malgun Gothic');font-weight:400}
+@font-face{font-family:'MG';src:local('Malgun Gothic Bold'),local('Malgun Gothic');font-weight:700}
+#root{word-break:keep-all}
+#root{position:absolute;inset:0;font-family:'MG',sans-serif;overflow:hidden}
+#root *{box-sizing:border-box}
+.abs{position:absolute}
+
+#s1-bg{background:linear-gradient(180deg,#FFF1D0 0%,#FFE3A8 62%,#8EA0B8 62%,#6F7F96 100%)}
+.bubble{background:#fff;border:6px solid #1A1A1A;border-radius:36px;padding:26px 36px;font-size:54px;font-weight:700;color:#1A1A1A;line-height:1.3;box-shadow:8px 10px 0 rgba(0,0,0,.18)}
+.card-t{font-size:112px;font-weight:700;color:#0A3C9E;letter-spacing:-2px;text-align:center}
+.card-s{font-size:52px;color:#3B4A63;text-align:center;margin-top:22px}
+.stamp{font-size:64px;font-weight:700;color:#D6361F;border:8px solid #D6361F;border-radius:20px;padding:10px 34px;background:rgba(255,255,255,.85)}
+</style>
+<div id="root" data-composition-id="s1-intro" data-width="1920" data-height="1080">
+
+<div id="s1-bg" class="abs" style="inset:0"></div>
+<div id="s1-title" class="clip abs" data-start="0" data-duration="3.6" style="inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#FFF1D0;z-index:5">
+  <div id="s1-title-in"><div class="card-t">등·하원 픽업의 30초</div><div class="card-s">뒤차는 빵빵, 아이는 타는 중, 아빠는 바쁘다</div></div>
+</div>
+<div id="s1-dad" class="clip abs" data-start="3.6" data-duration="12.4" style="left:130px;top:150px;width:510px;height:760px;z-index:2"><img id="s1-dad-a" class="abs" src="assets/mo/dad-proud.png" style="inset:0;width:100%;height:100%;object-fit:contain"><img id="s1-dad-b" class="abs" src="assets/mo/dad-panic.png" style="inset:0;width:100%;height:100%;object-fit:contain;opacity:0"></div>
+<div id="s1-kid" class="clip abs" data-start="7.6" data-duration="8.4" style="left:1250px;top:300px;width:400px;height:600px;z-index:2"><img src="assets/mo/kid-doubt.png" style="width:100%;height:100%;object-fit:contain"></div>
+<div id="s1-b1" class="clip abs" data-start="4.2" data-duration="6.6" style="left:640px;top:330px;width:560px;z-index:3"><div class="bubble" id="s1-b1-in">벨트? 다 했겠지~ 출발!</div></div>
+<div id="s1-stamp" class="clip abs" data-start="6" data-duration="9" style="left:70px;top:50px;z-index:4"><div class="stamp" id="s1-stamp-in">오답, 하나.</div></div>
+<div id="s1-b2" class="clip abs" data-start="8" data-duration="5.8" style="left:1060px;top:60px;width:760px;z-index:3"><div class="bubble" id="s1-b2-in">아빠… 오른쪽 벨트는 안 채워졌는데?</div></div>
+<div id="s1-b3" class="clip abs" data-start="11.2" data-duration="2.5" style="left:560px;top:600px;width:640px;z-index:4"><div class="bubble" id="s1-b3-in">어, 어디 거?! 문은 또 어느 쪽?!</div></div>
+<div id="s1-end" class="clip abs" data-start="13.8" data-duration="2.2" style="inset:0;display:flex;align-items:center;justify-content:center;background:#0A3C9E;z-index:6"><div id="s1-end-in" class="card-t" style="color:#fff;font-size:92px">이 30초를 차가 챙겨 준다면?</div></div>
+
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+
+tl.fromTo('#s1-title-in',{opacity:0,y:30},{opacity:1,y:0,duration:.5,ease:'power3.out'},0.2);
+tl.to('#s1-title-in',{opacity:0,duration:.3},3.2);
+tl.fromTo('#s1-dad',{x:-300,opacity:0},{x:0,opacity:1,duration:.6,ease:'power3.out'},3.7);
+tl.fromTo('#s1-b1-in',{scale:.6,opacity:0,transformOrigin:'0% 100%'},{scale:1,opacity:1,duration:.35,ease:'back.out(2)'},4.3);
+tl.fromTo('#s1-stamp-in',{scale:2.2,opacity:0,rotation:-8},{scale:1,opacity:1,rotation:-6,duration:.25,ease:'power4.in'},6.1);
+tl.fromTo('#s1-kid',{x:300,opacity:0},{x:0,opacity:1,duration:.6,ease:'power3.out'},7.7);
+tl.fromTo('#s1-b2-in',{scale:.6,opacity:0,transformOrigin:'0% 100%'},{scale:1,opacity:1,duration:.35,ease:'back.out(2)'},8.1);
+tl.to('#s1-dad-b',{opacity:1,duration:.15},11.2);
+tl.to('#s1-dad-a',{opacity:0,duration:.15},11.2);
+tl.fromTo('#s1-b3-in',{scale:.6,opacity:0,transformOrigin:'0% 0%'},{scale:1,opacity:1,duration:.35,ease:'back.out(2)'},11.3);
+tl.fromTo('#s1-end-in',{opacity:0,y:30},{opacity:1,y:0,duration:.5,ease:'power3.out'},14.0);
+
+window.__timelines["s1-intro"] = tl;
+</script>
+</template>

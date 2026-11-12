@@ -1,0 +1,18 @@
+{
+  "notice": "데모용 가상 샘플입니다. 실제 단속 구역과 일치하지 않습니다.",
+  "zones": [
+    { "id": "demo-crosswalk-1", "name": "샘플 횡단보도 A", "type": "CROSSWALK",
+      "circle": { "lat": 37.5665, "lng": 126.9780, "radiusM": 40 } },
+    { "id": "demo-hydrant-1", "name": "샘플 소화전 B", "type": "HYDRANT",
+      "circle": { "lat": 37.5700, "lng": 126.9820, "radiusM": 25 } },
+    { "id": "demo-busstop-1", "name": "샘플 버스정류장 C", "type": "BUS_STOP",
+      "polygon": [[37.5601, 126.9751], [37.5601, 126.9758], [37.5606, 126.9758], [37.5606, 126.9751]],
+      "activeHours": { "days": [], "start": "00:00", "end": "23:59" } },
+    { "id": "demo-school-1", "name": "샘플 어린이보호구역 D", "type": "SCHOOL_ZONE",
+      "circle": { "lat": 37.5512, "lng": 126.9882, "radiusM": 120 },
+      "activeHours": { "days": ["MON","TUE","WED","THU","FRI"], "start": "08:00", "end": "20:00" } },
+    { "id": "demo-other-1", "name": "샘플 제한 구간 E", "type": "OTHER",
+      "circle": { "lat": 37.5796, "lng": 126.9770, "radiusM": 60 },
+      "activeHours": { "days": [], "start": "22:00", "end": "06:00" } }
+  ]
+}

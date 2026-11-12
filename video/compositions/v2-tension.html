@@ -1,0 +1,58 @@
+<template>
+<style>
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Bold.otf');font-weight:700}
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-ExtraBold.otf');font-weight:800}
+#root{position:absolute;inset:0;overflow:hidden;background:#05070C;font-family:'Pretendard',sans-serif;word-break:keep-all;color:#fff}
+#root .abs{position:absolute}
+#root .full{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+#root .scrim{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 70%,rgba(5,7,12,.70) 0%,rgba(5,7,12,.25) 55%,rgba(5,7,12,.10) 100%)}
+#root .tag{display:inline-block;font-size:30px;font-weight:800;letter-spacing:3px;color:#fff;background:#E5484D;border-radius:999px;padding:10px 26px}
+#root .q{font-size:128px;font-weight:800;line-height:1.08;letter-spacing:-3px;margin-top:26px;text-shadow:0 6px 40px rgba(0,0,0,.45)}
+#root .shot{position:absolute;inset:0;overflow:hidden}
+</style>
+<div id="root" data-composition-id="v2-tension" data-width="1920" data-height="1080">
+
+  <div id="t-s1" class="shot">
+    <div id="t-s1-m" class="abs" style="inset:0"><video id="t-v1" class="clip full" data-start="0" data-duration="2.4" src="assets/stock/backseat.mp4" muted playsinline></video></div>
+    
+    <div id="t-s1-c" class="clip abs" data-start="0" data-duration="2.4" style="z-index:5;left:144px;bottom:150px">
+      <div class="tag">하나</div>
+      <div class="q">벨트, 다 했니?</div>
+    </div>
+  </div>
+
+  <div id="t-s2" class="shot">
+    <div id="t-s2-m" class="abs" style="inset:0"><video id="t-v2" class="clip full" data-start="2.4" data-duration="2.4" src="assets/stock/traffic.mp4" muted playsinline></video></div>
+    
+    <div id="t-s2-c" class="clip abs" data-start="2.4" data-duration="2.4" style="z-index:5;left:144px;bottom:150px">
+      <div class="tag">둘</div>
+      <div class="q">그 문, <span style="color:#FF6B6F">차도 쪽</span>이야!</div>
+    </div>
+  </div>
+
+  <div id="t-s3" class="shot">
+    <div id="t-s3-m" class="abs" style="inset:0"><video id="t-v3" class="clip full" data-start="4.8" data-duration="2.5" src="assets/stock/ticket.mp4" muted playsinline></video></div>
+    
+    <div id="t-s3-c" class="clip abs" data-start="4.8" data-duration="2.5" style="z-index:5;left:144px;bottom:150px">
+      <div class="tag">셋</div>
+      <div class="q">여기, 세워도 되나?</div>
+    </div>
+  </div>
+
+  <div class="scrim" style="z-index:4"></div>
+  <div id="t-dip" class="clip abs" data-start="6.9" data-duration="0.6" style="inset:0;z-index:9"><div id="t-dip-in" class="abs" style="inset:0;background:#05070C"></div></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+const shots=[['#t-s1-m','#t-s1-c',0],['#t-s2-m','#t-s2-c',2.4],['#t-s3-m','#t-s3-c',4.8]];
+shots.forEach(([m,c,t],i)=>{
+  const dir = i%2===0 ? 1 : -1;
+  tl.fromTo(m,{x:220*dir,filter:'blur(16px)',scale:1.08},{x:0,filter:'blur(0px)',scale:1.08,duration:.32,ease:'expo.out'},t);
+  tl.fromTo(m,{scale:1.08},{scale:1.0,duration:2.1,ease:'power1.out'},t+.32);
+  tl.fromTo(c+' .tag',{opacity:0,scale:.6},{opacity:1,scale:1,duration:.3,ease:'back.out(2)'},t+.12);
+  tl.fromTo(c+' .q',{opacity:0,filter:'blur(10px)',x:-30*dir},{opacity:1,filter:'blur(0px)',x:0,duration:.22,ease:'power4.out'},t+.2);
+});
+tl.fromTo('#t-dip-in',{opacity:0},{opacity:1,duration:.35,ease:'power2.in'},6.9);
+window.__timelines["v2-tension"] = tl;
+</script>
+</template>

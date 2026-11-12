@@ -1,0 +1,42 @@
+<template>
+<style>
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Medium.otf');font-weight:500}
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Bold.otf');font-weight:700}
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-ExtraBold.otf');font-weight:800}
+#root{position:absolute;inset:0;overflow:hidden;background:#05070C;font-family:'Pretendard',sans-serif;word-break:keep-all;color:#fff}
+#root .abs{position:absolute}
+#root .full{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+#root .chip{display:flex;align-items:center;gap:14px;font-size:36px;font-weight:700;background:rgba(255,255,255,.10);border:2px solid rgba(255,255,255,.18);border-radius:999px;padding:16px 32px}
+#root .chip b{width:14px;height:14px;border-radius:50%;background:#5B8CFF;display:block}
+</style>
+<div id="root" data-composition-id="v2-claim" data-width="1920" data-height="1080">
+  <div id="k-f" class="abs" style="inset:0;overflow:hidden;z-index:1">
+    <div id="k-fm" class="abs" style="inset:0"><video id="k-v" class="clip full" data-start="0" data-duration="6" src="assets/stock/backseat.mp4" data-media-start="1" muted playsinline></video></div>
+  </div>
+  <div class="abs" style="inset:0;z-index:2;background:linear-gradient(180deg,rgba(8,18,48,.80),rgba(5,7,12,.90))"></div>
+
+  <div id="k-main" class="clip abs" data-start="0" data-duration="6" style="inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <div id="k-h" style="font-size:30px;font-weight:800;letter-spacing:4px;color:#7FA6FF">PLEOS VEHICLE SDK</div>
+    <div id="k-t" style="font-size:70px;font-weight:800;margin-top:20px;letter-spacing:-1px">차가 이미 아는 신호로 챙깁니다</div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:56px;width:1500px">
+      <div class="chip" id="k-c1"><b></b>좌석 탑승</div>
+      <div class="chip" id="k-c2"><b></b>안전벨트</div>
+      <div class="chip" id="k-c3"><b></b>도어</div>
+      <div class="chip" id="k-c4"><b></b>창문</div>
+      <div class="chip" id="k-c5"><b></b>기어 (P 판별)</div>
+      <div class="chip" id="k-c6"><b></b>서리 제습 · 와이퍼</div>
+    </div>
+    <div id="k-p" style="font-size:34px;font-weight:500;color:#C9D4EC;margin-top:60px">위치·좌석 정보는 <span style="color:#fff;font-weight:700">차 안에서만</span> 처리 · 서버 전송 없음 · 아이 정보 입력 없음</div>
+  </div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#k-fm',{scale:1.12},{scale:1.0,duration:6,ease:'power1.out'},0);
+tl.fromTo('#k-h',{opacity:0},{opacity:1,duration:.3},0.15);
+tl.fromTo('#k-t',{opacity:0,filter:'blur(10px)'},{opacity:1,filter:'blur(0px)',duration:.2,ease:'power4.out'},0.3);
+['#k-c1','#k-c2','#k-c3','#k-c4','#k-c5','#k-c6'].forEach((s,i)=>tl.fromTo(s,{opacity:0,y:24,scale:.92},{opacity:1,y:0,scale:1,duration:.4,ease:'back.out(1.7)'},0.9+i*0.08));
+tl.fromTo('#k-p',{opacity:0,y:14},{opacity:1,y:0,duration:.4,ease:'power3.out'},1.9);
+tl.to('#k-main > *',{opacity:0,filter:'blur(8px)',duration:.2,ease:'power2.in'},5.75);
+window.__timelines["v2-claim"] = tl;
+</script>
+</template>

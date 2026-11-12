@@ -1,0 +1,35 @@
+<template>
+<style>
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Medium.otf');font-weight:500}
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Bold.otf');font-weight:700}
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-ExtraBold.otf');font-weight:800}
+#root{position:absolute;inset:0;overflow:hidden;background:#05070C;font-family:'Pretendard',sans-serif;word-break:keep-all;color:#fff}
+#root .abs{position:absolute}
+</style>
+<div id="root" data-composition-id="v2-end" data-width="1920" data-height="1080">
+  <div id="e-bg" class="abs" style="inset:0;background:radial-gradient(ellipse at 50% 45%,#16357F 0%,#0A1638 50%,#05070C 85%)"></div>
+  <div id="e-main" class="clip abs" data-start="0" data-duration="7" style="inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <div style="display:flex;align-items:center;gap:28px">
+      <div id="e-badge" style="width:118px;height:118px;border-radius:34px;background:linear-gradient(135deg,#5B8CFF,#2357E8);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 50px rgba(47,107,255,.5)">
+        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v-5l-2-5H7l-2 5v5z"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/><path d="M12 3v3"/></svg>
+      </div>
+      <div id="e-word" style="font-size:150px;font-weight:800;letter-spacing:-4px;line-height:1">마중</div>
+    </div>
+    <div id="e-line" style="font-size:52px;font-weight:700;margin-top:44px">아이를 맞이하는 30초, <span style="color:#7FA6FF">차가 함께 챙깁니다</span></div>
+    <div id="e-team" style="font-size:30px;font-weight:500;color:#AFC0E6;margin-top:26px">별틔움 · 현대자동차그룹 차량용 앱 개발 공모전 출품작</div>
+  </div>
+  <div id="e-cred" class="clip abs" data-start="1.2" data-duration="5.8" style="left:0;right:0;bottom:66px;text-align:center;font-size:28px;line-height:1.5;font-weight:500;color:#8592B0">
+    영상·효과음: Pixabay · Pexels (무료 라이선스) · 서체: Pretendard (OFL)<br>앱 화면: 가상 차량(Fake) 데모 빌드
+  </div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#e-bg',{opacity:0},{opacity:1,duration:.5,ease:'power2.inOut'},0);
+tl.fromTo('#e-badge',{scale:0,rotation:-20},{scale:1,rotation:0,duration:.6,ease:'back.out(1.6)'},0.2);
+tl.fromTo('#e-word',{opacity:0,clipPath:'inset(0 100% 0 0)'},{opacity:1,clipPath:'inset(0 0% 0 0)',duration:.55,ease:'power3.out'},0.45);
+tl.fromTo('#e-line',{opacity:0,filter:'blur(8px)'},{opacity:1,filter:'blur(0px)',duration:.2,ease:'power4.out'},1.1);
+tl.fromTo('#e-team',{opacity:0},{opacity:1,duration:.4},1.5);
+tl.fromTo('#e-cred',{opacity:0},{opacity:1,duration:.5},1.4);
+window.__timelines["v2-end"] = tl;
+</script>
+</template>

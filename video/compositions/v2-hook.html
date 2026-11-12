@@ -1,0 +1,54 @@
+<template>
+<style>
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Medium.otf');font-weight:500}
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Bold.otf');font-weight:700}
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-ExtraBold.otf');font-weight:800}
+#root{position:absolute;inset:0;overflow:hidden;background:#05070C;font-family:'Pretendard',sans-serif;word-break:keep-all;color:#fff}
+#root .abs{position:absolute}
+#root .full{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+#root .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,.15) 0%,rgba(5,7,12,.05) 45%,rgba(5,7,12,.78) 100%)}
+#root .w{display:inline-block}
+</style>
+<div id="root" data-composition-id="v2-hook" data-width="1920" data-height="1080">
+
+  <video id="h-city" class="clip full" src="assets/stock/city.mp4" data-start="0" data-duration="3.2" muted playsinline style="z-index:1"></video>
+  <div id="h-sch-wrap" class="abs" style="inset:0;z-index:2;overflow:hidden">
+    <div id="h-sch-move" class="abs" style="inset:0">
+      <video id="h-school" class="clip full" data-start="3.2" data-duration="3.8" src="assets/stock/school.mp4" muted playsinline></video>
+    </div>
+  </div>
+  <div class="scrim" style="z-index:3"></div>
+
+  <div id="h-t1" class="clip abs" data-start="0.3" data-duration="2.9" style="left:144px;bottom:150px;z-index:5">
+    <div style="font-size:34px;font-weight:700;letter-spacing:6px;color:#9FB8FF;margin-bottom:18px"><span id="h-t1-k" class="w">PM 3:40 · 하원 시간</span></div>
+    <div style="font-size:104px;font-weight:800;line-height:1.1;letter-spacing:-2px">
+      <span id="h-t1-a" class="w">오늘도</span> <span id="h-t1-b" class="w">학교</span> <span id="h-t1-c" class="w">앞.</span>
+    </div>
+  </div>
+
+  <div id="h-t2" class="clip abs" data-start="3.5" data-duration="3.5" style="left:144px;bottom:150px;z-index:5">
+    <div style="font-size:60px;font-weight:700;line-height:1.2;color:#E9EEF8">
+      <span id="h-t2-a" class="w">아이를</span> <span id="h-t2-b" class="w">태우고</span> <span id="h-t2-c" class="w">내리는</span> <span id="h-t2-d" class="w">시간은</span>
+    </div>
+    <div style="font-size:150px;font-weight:800;line-height:1.05;letter-spacing:-4px;margin-top:6px">
+      <span id="h-t2-e" class="w">단</span> <span id="h-t2-f" class="w" style="color:#5B8CFF">30초.</span>
+    </div>
+  </div>
+
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+// title 1: per-word blur in
+tl.fromTo('#h-t1-k',{opacity:0,filter:'blur(6px)'},{opacity:1,filter:'blur(0px)',duration:.25,ease:'power4.out'},0.3);
+['#h-t1-a','#h-t1-b','#h-t1-c'].forEach((s,i)=>tl.fromTo(s,{opacity:0,filter:'blur(8px)'},{opacity:1,filter:'blur(0px)',duration:.16,ease:'power4.out'},0.55+i*0.09));
+tl.to('#h-t1 > div',{opacity:0,filter:'blur(8px)',duration:.18,ease:'power2.in'},2.95);
+// whip into the school clip
+tl.fromTo('#h-sch-move',{x:260,filter:'blur(18px)'},{x:0,filter:'blur(0px)',duration:.4,ease:'expo.out'},3.2);
+tl.fromTo('#h-sch-move',{scale:1.0},{scale:1.06,duration:3.4,ease:'none'},3.6);
+// title 2: grey to ink per word, then hero word
+['#h-t2-a','#h-t2-b','#h-t2-c','#h-t2-d'].forEach((s,i)=>tl.fromTo(s,{opacity:0,filter:'blur(6px)'},{opacity:1,filter:'blur(0px)',duration:.14,ease:'power4.out'},3.55+i*0.08));
+tl.fromTo('#h-t2-e',{opacity:0},{opacity:1,duration:.15},4.3);
+tl.fromTo('#h-t2-f',{opacity:0,scale:1.25,filter:'blur(10px)'},{opacity:1,scale:1,filter:'blur(0px)',duration:.45,ease:'expo.out'},4.4);
+window.__timelines["v2-hook"] = tl;
+</script>
+</template>

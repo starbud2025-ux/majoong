@@ -1,0 +1,131 @@
+<template>
+<style>
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Medium.otf');font-weight:500}
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Bold.otf');font-weight:700}
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-ExtraBold.otf');font-weight:800}
+#root{position:absolute;inset:0;overflow:hidden;background:#05070C;font-family:'Pretendard',sans-serif;word-break:keep-all;color:#fff}
+#root .abs{position:absolute}
+#root .full{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+#root .foot{position:absolute;inset:0;overflow:hidden}
+#root .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,7,12,.88) 0%,rgba(5,7,12,.66) 34%,rgba(5,7,12,.12) 58%,rgba(5,7,12,.30) 100%)}
+#root .txt{position:absolute;left:120px;top:300px;width:900px}
+#root .num{font-size:30px;font-weight:800;letter-spacing:4px;color:#7FA6FF}
+#root .ttl{font-size:76px;font-weight:800;line-height:1.16;letter-spacing:-2px;margin-top:18px}
+#root .dsc{font-size:38px;font-weight:500;line-height:1.5;color:#D3DCEE;margin-top:30px}
+#root .note{display:inline-block;font-size:28px;font-weight:700;color:#FFD27A;border:2px solid rgba(255,210,122,.6);border-radius:999px;padding:6px 18px;margin-top:28px}
+#root .scr{position:absolute;inset:0}
+#root .scr img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+#root .seg{width:96px;height:6px;border-radius:3px;background:rgba(255,255,255,.22);overflow:hidden}
+#root .seg i{display:block;width:100%;height:100%;background:#7FA6FF;transform-origin:left center}
+</style>
+<div id="root" data-composition-id="v2-cases" data-width="1920" data-height="1080">
+
+  <!-- footage per chapter -->
+  <div id="c1-f" class="foot" style="z-index:1"><div id="c1-fm" class="abs" style="inset:0"><video id="c1-v" class="clip full" data-start="0" data-duration="7" src="assets/stock/belt.mp4" muted playsinline></video></div></div>
+  <div id="c2-f" class="foot" style="z-index:1"><div id="c2-fm" class="abs" style="inset:0"><video id="c2-v" class="clip full" data-start="7" data-duration="7" src="assets/stock/door.mp4" muted playsinline></video></div></div>
+  <div id="c3-f" class="foot" style="z-index:1"><div id="c3-fm" class="abs" style="inset:0"><video id="c3-v" class="clip full" data-start="14" data-duration="7" src="assets/stock/unload.mp4" muted playsinline></video></div></div>
+  <div id="c4-f" class="foot" style="z-index:1"><div id="c4-fm" class="abs" style="inset:0"><video id="c4-v" class="clip full" data-start="21" data-duration="3.5" src="assets/stock/officer.mp4" muted playsinline></video></div></div>
+  <div id="c4b-f" class="foot" style="z-index:1"><div id="c4b-fm" class="abs" style="inset:0"><video id="c4b-v" class="clip full" data-start="24.5" data-duration="3.5" src="assets/stock/ticket.mp4" data-media-start="2.8" muted playsinline></video></div></div>
+  <div id="c5-f" class="foot" style="z-index:1"><div id="c5-fm" class="abs" style="inset:0"><video id="c5-v" class="clip full" data-start="28" data-duration="7" src="assets/stock/frost.mp4" muted playsinline></video></div></div>
+  <div id="c6-f" class="foot" style="z-index:1"><div id="c6-fm" class="abs" style="inset:0"><video id="c6-v" class="clip full" data-start="35" data-duration="7" src="assets/stock/driving.mp4" data-playback-rate="0.9" muted playsinline></video></div></div>
+  <div class="shade" style="z-index:2"></div>
+
+  <!-- chapter progress -->
+  <div id="c-prog" class="abs" style="left:120px;top:96px;z-index:6;display:flex;gap:12px;align-items:center">
+    <div class="seg"><i id="c-p1"></i></div><div class="seg"><i id="c-p2"></i></div><div class="seg"><i id="c-p3"></i></div>
+    <div class="seg"><i id="c-p4"></i></div><div class="seg"><i id="c-p5"></i></div><div class="seg"><i id="c-p6"></i></div>
+    <div style="font-size:28px;font-weight:700;color:#AFC0E6;margin-left:14px;letter-spacing:1px">마중이 챙기는 6가지 순간</div>
+  </div>
+
+  <!-- chapter copy -->
+  <div id="c1-t" class="clip txt" data-start="0" data-duration="7" style="z-index:6">
+    <div class="num">01 · 좌석별 안전벨트</div>
+    <div class="ttl">어느 자리가 안 맸는지,<br><span style="color:#FF6B6F">정확히</span> 짚어요</div>
+    <div class="dsc">뒷줄 왼쪽·가운데·오른쪽을 따로 보고,<br>전원 맸을 때만 "모두 확인했어요"</div>
+  </div>
+  <div id="c2-t" class="clip txt" data-start="7" data-duration="7" style="z-index:6">
+    <div class="num">02 · 인도 쪽 문 안내</div>
+    <div class="ttl">차도 쪽 문이 열리면<br><span style="color:#FF6B6F">바로 경고</span></div>
+    <div class="dsc">정차 방향에 맞춰<br>"오른쪽 문으로 내려 주세요"</div>
+  </div>
+  <div id="c3-t" class="clip txt" data-start="14" data-duration="7" style="z-index:6">
+    <div class="num">03 · 내리기 전 점검</div>
+    <div class="ttl">놓친 것만<br><span style="color:#7FA6FF">골라서</span> 알려 줘요</div>
+    <div class="dsc">남은 탑승자, 열린 도어·창문을<br>이상 항목만 짧게 요약</div>
+  </div>
+  <div id="c4-t" class="clip txt" data-start="21" data-duration="7" style="z-index:6">
+    <div class="num">04 · 주정차 금지 구역</div>
+    <div class="ttl">P로 세우면,<br>여기 <span style="color:#FFD27A">괜찮은지</span> 먼저</div>
+    <div class="dsc">위치를 구역 데이터와<br>차 안에서 대조해 경고</div>
+    <div class="note">현재 샘플 구역 데이터로 시연</div>
+  </div>
+  <div id="c5-t" class="clip txt" data-start="28" data-duration="7" style="z-index:6">
+    <div class="num">05 · 출발 전 서리 루틴</div>
+    <div class="ttl">겨울 아침,<br>버튼 한 번으로 <span style="color:#7FA6FF">시야 확보</span></div>
+    <div class="dsc">동의 후 실행,<br>결과까지 확인</div>
+    <div class="note">차량 제어 권한 승인 시</div>
+  </div>
+  <div id="c6-t" class="clip txt" data-start="35" data-duration="7" style="z-index:6">
+    <div class="num">06 · 정차 전용 설계</div>
+    <div class="ttl">출발하면<br>화면은 <span style="color:#FF6B6F">스스로 멈춰요</span></div>
+    <div class="dsc">기어가 P를 벗어나면<br>모든 안내와 제어를 즉시 중단</div>
+  </div>
+
+  <!-- app display -->
+  <div id="c-dev" class="abs" style="left:1196px;top:70px;width:576px;height:940px;z-index:7">
+    <div id="c-dev-in" class="abs" style="inset:0;border-radius:40px;background:#0B0F18;padding:8px;box-shadow:0 40px 120px rgba(0,0,0,.6),0 0 0 2px rgba(255,255,255,.10)">
+      <div class="abs" style="left:8px;top:8px;right:8px;bottom:8px;border-radius:32px;overflow:hidden;background:#F5F6F8">
+        <div id="d-05" class="clip scr" data-start="0" data-duration="2.3"><img id="d-05-i" src="assets/shots/05_pickup_wait.png"></div>
+        <div id="d-06" class="clip scr" data-start="2.3" data-duration="2.4"><img id="d-06-i" src="assets/shots/06_unbuckled.png"></div>
+        <div id="d-07" class="clip scr" data-start="4.7" data-duration="2.3"><img id="d-07-i" src="assets/shots/07_buckled.png"></div>
+        <div id="d-08" class="clip scr" data-start="7" data-duration="3.8"><img id="d-08-i" src="assets/shots/08_curbdoor.png"></div>
+        <div id="d-09" class="clip scr" data-start="10.8" data-duration="3.2"><img id="d-09-i" src="assets/shots/09_rightdoor.png"></div>
+        <div id="d-10" class="clip scr" data-start="14" data-duration="7"><img id="d-10-i" src="assets/shots/10_done.png"></div>
+        <div id="d-02" class="clip scr" data-start="21" data-duration="7"><img id="d-02-i" src="assets/shots/02_zone.png"></div>
+        <div id="d-04" class="clip scr" data-start="28" data-duration="7"><img id="d-04-i" src="assets/shots/04_depart.png"></div>
+        <div id="d-03" class="clip scr" data-start="35" data-duration="2"><img id="d-03-i" src="assets/shots/03_home.png"></div>
+        <div id="d-11" class="clip scr" data-start="37" data-duration="5"><img id="d-11-i" src="assets/shots/11_driving.png"></div>
+      </div>
+    </div>
+  </div>
+  <div id="c-cap" class="abs" style="left:120px;top:962px;z-index:6;font-size:28px;font-weight:500;color:#8E9BB8">오른쪽: 실제 앱 화면 · 가상 차량(Fake) 데이터로 시연</div>
+
+  <!-- red alert edge flashes -->
+  <div id="c-alert1" class="clip abs" data-start="2.3" data-duration="0.8" style="inset:0;z-index:5"><div id="c-alert1-in" class="abs" style="inset:0;box-shadow:inset 0 0 180px 40px rgba(229,72,77,.55)"></div></div>
+  <div id="c-alert2" class="clip abs" data-start="7" data-duration="0.8" style="inset:0;z-index:5"><div id="c-alert2-in" class="abs" style="inset:0;box-shadow:inset 0 0 180px 40px rgba(229,72,77,.55)"></div></div>
+  <div id="c-alert3" class="clip abs" data-start="37" data-duration="0.8" style="inset:0;z-index:5"><div id="c-alert3-in" class="abs" style="inset:0;box-shadow:inset 0 0 180px 40px rgba(229,72,77,.55)"></div></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+// device entrance
+tl.fromTo('#c-dev-in',{y:120,opacity:0,scale:.94},{y:0,opacity:1,scale:1,duration:.7,ease:'expo.out'},0.1);
+tl.fromTo('#c-prog',{opacity:0},{opacity:1,duration:.4},0.2);
+tl.fromTo('#c-cap',{opacity:0},{opacity:1,duration:.4},0.6);
+
+// footage whips and slow push
+const feet=[['#c1-fm',0,7],['#c2-fm',7,7],['#c3-fm',14,7],['#c4-fm',21,3.5],['#c4b-fm',24.5,3.5],['#c5-fm',28,7],['#c6-fm',35,7]];
+feet.forEach(([s,t,d],i)=>{
+  if(i>0) tl.fromTo(s,{x:i%2?-240:240,filter:'blur(18px)'},{x:0,filter:'blur(0px)',duration:.38,ease:'expo.out'},t);
+  tl.fromTo(s,{scale:1.0},{scale:1.07,duration:d,ease:'none'},t);
+});
+
+// chapter copy: number, title per line blur, desc fade; exit blur
+[0,7,14,21,28,35].forEach((t,i)=>{
+  const id='#c'+(i+1)+'-t';
+  tl.fromTo(id+' .num',{opacity:0,x:-24},{opacity:1,x:0,duration:.35,ease:'power4.out'},t+.15);
+  tl.fromTo(id+' .ttl',{opacity:0,filter:'blur(10px)'},{opacity:1,filter:'blur(0px)',duration:.22,ease:'power4.out'},t+.3);
+  tl.fromTo(id+' .dsc',{opacity:0,y:16},{opacity:1,y:0,duration:.4,ease:'power3.out'},t+.75);
+  if(document.querySelector(id+' .note')) tl.fromTo(id+' .note',{opacity:0,scale:.9},{opacity:1,scale:1,duration:.3,ease:'back.out(1.8)'},t+1.3);
+  tl.to(id+' > *',{opacity:0,filter:'blur(8px)',duration:.18,ease:'power2.in'},t+6.75);
+  tl.fromTo('#c-p'+(i+1),{scaleX:0},{scaleX:1,duration:7,ease:'none'},t);
+});
+
+// screen swaps: blur swap on one stage
+const scr=[['#d-05-i',0],['#d-06-i',2.3],['#d-07-i',4.7],['#d-08-i',7],['#d-09-i',10.8],['#d-10-i',14],['#d-02-i',21],['#d-04-i',28],['#d-03-i',35],['#d-11-i',37]];
+scr.forEach(([s,t],i)=>{ if(i>0) tl.fromTo(s,{opacity:0,filter:'blur(8px)',scale:1.03},{opacity:1,filter:'blur(0px)',scale:1,duration:.25,ease:'power3.out'},t); });
+// device nudge on alerts
+[2.3,7,37].forEach(t=>tl.to('#c-dev',{duration:.4,keyframes:{x:[0,-10,9,-6,4,0]},ease:'none'},t));
+['#c-alert1-in','#c-alert2-in','#c-alert3-in'].forEach((s,i)=>tl.fromTo(s,{opacity:0},{opacity:0,duration:.75,keyframes:{opacity:[0,1,.3,.8,0]},ease:'none'},[2.3,7,37][i]));
+window.__timelines["v2-cases"] = tl;
+</script>
+</template>
